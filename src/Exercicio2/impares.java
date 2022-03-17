@@ -8,10 +8,12 @@ public class impares {
         String numero = sc.next();
         int quantidadeImpar = 0;
 
-        if(Integer.parseInt(numero) < 350 || Integer.parseInt(numero) > 8750){
-            System.out.println("Entrada deve conter 3 digitos");
+        if(Integer.parseInt(numero) <= 350 || Integer.parseInt(numero) >= 8750){
+            System.out.println("Entrada deve conter entre 3 e 4 digitos");
+            return;
         }
-        for(int i = 0;i < 4;i++){
+
+        for(int i = 0;i < numero.length();i++){
             if(Integer.parseInt(numero.substring(i,i+1)) %2 != 0) {
                 quantidadeImpar++;
             }

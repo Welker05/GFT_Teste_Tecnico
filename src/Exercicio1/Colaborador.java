@@ -1,44 +1,22 @@
 package Exercicio1;
 
-public class Colaborador {
-    private String nome;
-    private int idade;
-    private double salario;
-    private int grauInstrucao;
+public abstract class Colaborador {
+    protected String nome;
+    protected int idade;
+    protected double salario;
+    protected int grauInstrucao;
 
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
+    public Colaborador (String nome,int idade,double salario,int grauInstrucao){
         this.nome = nome;
-    }
-
-    public int getIdade() {
-        return idade;
-    }
-
-    public void setIdade(int idade) {
         this.idade = idade;
-    }
-
-    public double getSalario() {
-        return salario;
-    }
-
-    public void setSalario(double salario) {
         this.salario = salario;
-    }
-
-    public int getGrauInstrucao() {
-        return grauInstrucao;
+        setGrauInstrucao(grauInstrucao);
     }
 
     public void setGrauInstrucao(int grauInstrucao) {
-        this.grauInstrucao = grauInstrucao;
+        if (grauInstrucao >= 1 && grauInstrucao <= 5)
+            this.grauInstrucao = grauInstrucao;
     }
 
-    public double bonificacao(){
-        return salario;
-    }
+    public abstract double bonificacao();
 }
